@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220310 20:28:43.020" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\FlooVeraghtert\Google Drive\Thomas More\Testen\Git\robot_tests-main\Exercise3\tests">
+<suite id="s1-s1" name="01 aboutUsTest" source="C:\Users\FlooVeraghtert\Google Drive\Thomas More\Testen\Git\robot_tests-main\Exercise3\tests\01_aboutUsTest.robot">
+<kw name="Open My Website" library="basePage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220310 20:28:43.226" level="INFO">Opening browser 'Google Chrome' to base url 'https://tweakers.net'.</msg>
+<status status="PASS" starttime="20220310 20:28:43.226" endtime="20220310 20:28:44.679"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:43.225" endtime="20220310 20:28:44.679"/>
+</kw>
+<test id="s1-s1-t1" name="Test Home Page Contains Expected Text">
+<kw name="Go To Home" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220310 20:28:44.683" level="INFO">Clicking element 'css:[title="Ja, ik accepteer cookies"]'.</msg>
+<status status="PASS" starttime="20220310 20:28:44.683" endtime="20220310 20:28:47.388"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:44.682" endtime="20220310 20:28:47.389"/>
+</kw>
+<kw name="Get Smartphones text" library="homePage">
+<var>${text}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SMART_TXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220310 20:28:47.389" endtime="20220310 20:28:47.422"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${SMART_TXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220310 20:28:47.445" level="INFO">${text} = Beste smartphones »</msg>
+<status status="PASS" starttime="20220310 20:28:47.422" endtime="20220310 20:28:47.445"/>
+</kw>
+<msg timestamp="20220310 20:28:47.445" level="INFO">${text} = Beste smartphones »</msg>
+<status status="PASS" starttime="20220310 20:28:47.389" endtime="20220310 20:28:47.445"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Beste smartphones</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220310 20:28:47.446" endtime="20220310 20:28:47.446"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:44.680" endtime="20220310 20:28:47.446"/>
+</test>
+<test id="s1-s1-t2" name="Test About Us Page Contains Expected Text">
+<kw name="Go from Home to About Us" library="homePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ABOUTUS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220310 20:28:47.449" level="INFO">Clicking element 'xpath://ul[@class='bulletSeparatedList']//a[normalize-space()='Over Tweakers']'.</msg>
+<status status="PASS" starttime="20220310 20:28:47.449" endtime="20220310 20:28:47.875"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:47.448" endtime="20220310 20:28:47.875"/>
+</kw>
+<kw name="Get about us text" library="aboutUsPage">
+<var>${text}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${ABOUTUS_TXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220310 20:28:47.912" level="INFO">${text} = Home
+Meer informatie
+Algemene voorwaarden &amp; Privacybeleid
+Responsible Disclosure
+Cookiebeleid
+Tweakers faq
+Adverteren
+Algemene Voorwaarden PWM
+Specificaties productfeed
+Werken bij Tweakers
+Technologie...</msg>
+<status status="PASS" starttime="20220310 20:28:47.876" endtime="20220310 20:28:47.912"/>
+</kw>
+<msg timestamp="20220310 20:28:47.912" level="INFO">${text} = Home
+Meer informatie
+Algemene voorwaarden &amp; Privacybeleid
+Responsible Disclosure
+Cookiebeleid
+Tweakers faq
+Adverteren
+Algemene Voorwaarden PWM
+Specificaties productfeed
+Werken bij Tweakers
+Technologie...</msg>
+<status status="PASS" starttime="20220310 20:28:47.875" endtime="20220310 20:28:47.912"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Zo helpen we je om te kiezen en het maximale uit je aankoop te halen</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220310 20:28:47.913" endtime="20220310 20:28:47.913"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:47.447" endtime="20220310 20:28:47.913"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220310 20:28:47.915" endtime="20220310 20:28:50.077"/>
+</kw>
+<status status="PASS" starttime="20220310 20:28:43.043" endtime="20220310 20:28:50.077"/>
+</suite>
+<status status="PASS" starttime="20220310 20:28:43.022" endtime="20220310 20:28:50.084"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="01 aboutUsTest">Tests.01 aboutUsTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
