@@ -11,6 +11,10 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
+Log count before adding
+     ${COUNT}=  Log count
+     Should Be Equal    ${COUNT}    ${7}
+
 Navigate To Creationnew
     Navigate To Creationnew
 
@@ -25,4 +29,8 @@ Add creation
 
 Navigate To CreationList
     Navigate To CreationlistFromDetail
+
+Log count after adding
+     ${COUNT}=  Log count
+     Should Be Equal    ${COUNT}    ${9}
 

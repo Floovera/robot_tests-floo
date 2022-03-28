@@ -5,7 +5,6 @@ Resource  basePage.robot
 *** Variables ***
 ${FILTER_CREATION_TYPE}=    css:#type
 
-
 *** Keywords ***
 
 Navigate To Creationnew
@@ -25,3 +24,6 @@ Log count
     ${COUNT}=    Get Element Count    //*[@class="buttonLook mediumButton"]
     Log  ${COUNT}
     [return]  ${COUNT}
+
+Navigate To Pasta
+    Click link  css:a[href='/creationdetails/4']
