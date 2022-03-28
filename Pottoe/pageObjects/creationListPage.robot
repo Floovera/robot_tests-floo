@@ -10,8 +10,12 @@ ${FILTER_CREATION_TYPE}=    css:#type
 Navigate To Creationnew
     Click link  css:a[href='/creationnew']
 
+Clear filter
+    Click link  css:a[href='/creationlist']
+
 Filter
     Click link  css:a[href='/creationlist/filter']
+
 
 Fill in filter
     [Arguments]  ${filter_type}

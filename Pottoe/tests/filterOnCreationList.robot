@@ -11,15 +11,17 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
-Filter
+Filter on creations - creation found
     Filter
-
-Fill in filter
     Fill in filter  potjes
-
-Search
     Search
-
-Log count
     ${COUNT}=  Log count
     Should Be Equal    ${COUNT}    ${2}
+
+Filter on creations - no creation found
+    Clear filter
+    Filter
+    Fill in filter  test
+    Search
+    ${COUNT}=  Log count
+    Should Be Equal    ${COUNT}    ${0}

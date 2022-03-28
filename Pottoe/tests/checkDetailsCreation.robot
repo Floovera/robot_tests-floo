@@ -11,25 +11,15 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
-Navigate to pasta
+Check details creation - when description is filled in
     Navigate To Pasta
-
-Test name
     ${name}=  Get creation name
     Should Contain  ${name}  Pasta
-
-Test type
     ${type}=  Get creation type
     Should Contain  ${type}  borden
-
-Test info
     ${info}=  Get creation info
     Should Contain  ${info}  Mama mia
-
-Test price
     ${price}=  Get creation price
     Should Contain  ${price}  5
-
-Test creator
     ${creator}=  Get creation creator
     Should Contain  ${creator}  Bea

@@ -11,14 +11,9 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
-Log count before adding
-     ${COUNT}=  Log count
-     Should Be Equal    ${COUNT}    ${6}
-
-Navigate To Creationnew
+Add creation - happy flow
+    ${COUNTBEFORE}=  Log count
     Navigate To Creationnew
-
-Add creation
     Fill in creation name  Soepkommen
     Fill in creation type  Borden
     Fill in creation info  Mooie blauwe soepkommen
@@ -26,11 +21,7 @@ Add creation
     Fill in creation price  12
     Fill in creation creator
     Add
-
-Navigate To CreationList
     Navigate To CreationlistFromDetail
-
-Log count after adding
-     ${COUNT}=  Log count
-     Should Be Equal    ${COUNT}    ${7}
+    ${COUNTAFTER}=  Log count
+    Should Be Equal    ${COUNTAFTER}    ${COUNTBEFORE+1}
 
