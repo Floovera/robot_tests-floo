@@ -11,15 +11,25 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
-Filter
-    Filter
+Navigate to pasta
+    Navigate To Pasta
 
-Fill in filter
-    Fill in filter  potjes
+Test name
+    ${name}=  Get creation name
+    Should Contain  ${name}  Pasta
 
-Search
-    Search
+Test type
+    ${type}=  Get creation type
+    Should Contain  ${type}  borden
 
-Log count
-    ${COUNT}=  Log count
-    Should Be Equal    ${COUNT}    ${2}
+Test info
+    ${info}=  Get creation info
+    Should Contain  ${info}  Mama mia
+
+Test price
+    ${price}=  Get creation price
+    Should Contain  ${price}  5
+
+Test creator
+    ${creator}=  Get creation creator
+    Should Contain  ${creator}  Bea

@@ -13,7 +13,7 @@ Suite Teardown  Close browser
 
 Log count before adding
      ${COUNT}=  Log count
-     Should Be Equal    ${COUNT}    ${7}
+     Should Be Equal    ${COUNT}    ${6}
 
 Navigate To Creationnew
     Navigate To Creationnew
@@ -32,5 +32,5 @@ Navigate To CreationList
 
 Log count after adding
      ${COUNT}=  Log count
-     Should Be Equal    ${COUNT}    ${9}
+     Should Be Equal    ${COUNT}    ${7}
 
